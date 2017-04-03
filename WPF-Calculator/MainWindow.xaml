@@ -48,6 +48,21 @@
                 <DropShadowEffect BlurRadius="14" ShadowDepth="6"/>
             </Button.Effect>
         </Button>
+        <Button x:Name="memory" Content="M+" FontSize="16" HorizontalAlignment="Left" Height="37" Margin="282,61,0,0" VerticalAlignment="Top" Width="80" Click="MemoryButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Arial Black" BorderThickness="1,1,2,2" ClickMode="Press" Opacity="0.9" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="14" ShadowDepth="6"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="memoryRecall" Content="M Use" FontSize="16" HorizontalAlignment="Left" Height="37" Margin="387,61,0,0" VerticalAlignment="Top" Width="80" Click="MemoryRecall" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Arial Black" BorderThickness="1,1,2,2" ClickMode="Press" Opacity="0.9" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="14" ShadowDepth="6"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="memoryClear" Content="M Clear" FontSize="16" HorizontalAlignment="Left" Height="37" Margin="483,61,0,0" VerticalAlignment="Top" Width="80" Click="MemoryClear" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Arial Black" BorderThickness="1,1,2,2" ClickMode="Press" Opacity="0.9" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="14" ShadowDepth="6"/>
+            </Button.Effect>
+        </Button>
 
 
     </Grid>

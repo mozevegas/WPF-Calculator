@@ -24,22 +24,20 @@ namespace WPF_Calculator
         {
             InitializeComponent();
         }
-
         private string operate = "Hello";
         private float firstly = 0;
         private float secondly = 0;
 
-        private void ClearMe ()
+        private void ClearMe()
         {
             inputOne.Text = "";
             inputTwo.Text = "";
         }
 
-        private float FloatNumbers (string inputme)
+        private float FloatNumbers(string inputme)
         {
             float temp = 0;
             temp = float.Parse(inputme);
-            firstly = temp;
             return temp;
         }
 
@@ -73,49 +71,47 @@ namespace WPF_Calculator
         }
         private void equalsButton(object sender, RoutedEventArgs e)
         {
+            firstly = FloatNumbers(inputOne.Text);
+            secondly = FloatNumbers(inputTwo.Text);
+
             if (operate == "addMe")
             {
-                firstly = FloatNumbers(inputOne.Text);
-                secondly = FloatNumbers(inputTwo.Text);
                 answerini.Text = $"{firstly + secondly}";
-                ClearMe();
             }
             else if (operate == "subtractMe")
             {
-                int firstly = 0;
-                firstly = int.Parse(inputOne.Text);
-                int secondly = 0;
-                secondly = int.Parse(inputTwo.Text);
                 answerini.Text = $"{firstly -= secondly}";
-                ClearMe();
             }
             else if (operate == "multiplyMe")
             {
-                int firstly = 0;
-                firstly = int.Parse(inputOne.Text);
-                int secondly = 0;
-                secondly = int.Parse(inputTwo.Text);
                 answerini.Text = $"{firstly * secondly}";
-                ClearMe();
             }
             else if (operate == "divideMe")
             {
-                float firstly = 0;
-                firstly = float.Parse(inputOne.Text);
-                float secondly = 0;
-                secondly = float.Parse(inputTwo.Text);
                 answerini.Text = $"{firstly / secondly}";
-                ClearMe();
             }
             else if (operate == "percentMe")
             {
-                float firstly = 0;
-                firstly = float.Parse(inputOne.Text);
-                float secondly = 0;
-                secondly = float.Parse(inputTwo.Text);
-                answerini.Text = $"{(secondly / firstly)*100}";
-                ClearMe();
+                answerini.Text = $"{(secondly / firstly) * 100}";
             }
+            ClearMe();
+        }
+
+        private double memoryPlace = 0;
+
+        private void MemoryButton(object sender, RoutedEventArgs e)
+        {
+            memoryPlace = FloatNumbers(inputOne.Text);
+        }
+
+        private void MemoryRecall(object sender, RoutedEventArgs e)
+        {
+            inputOne.Text = $"{memoryPlace}";
+        }
+
+        private void MemoryClear(object sender, RoutedEventArgs e)
+        {
+            memoryPlace = 0;
         }
     }
 }
